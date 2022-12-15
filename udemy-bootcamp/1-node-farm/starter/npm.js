@@ -1,13 +1,17 @@
 const http = require("http");
 const url = require("url");
 const fs = require("fs");
+const slugify = require("slugify");
 const replaceTemplate = require("./modules/replaceTemplate");
+
 
 // NOTE: with this function we take in a template and data and return HTML
 
 // NOTE: Read json file only once (running synchronus file read because we are at top level code)
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
 const dataObject = JSON.parse(data);
+const slugs = dataObject.map((el) => slugify(el.productName,{lower:true}));
+console.log(slugs)
 
 // NOTE: Read template data only once
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, "utf-8");

@@ -1,0 +1,17 @@
+{
+  "name": "node-firm",
+  "version": "1.0.0",
+  "description": "learning Node JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon npm.js"
+  },
+  "author": "amarta",
+  "license": "ISC",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
